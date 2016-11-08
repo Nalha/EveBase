@@ -1,0 +1,13 @@
+.navbar-default {
+  background-color: rgb(30, 30, 30);
+  border-color: rgb(45, 45, 45);
+}
+
+.navbar-default .navbar-nav > .active > a {
+  background-color: rgb(255, 144, 0) !important;
+  color: black !important;
+}
+
+.navbar-default .navbar-brand {
+  color: white !important;
+}
