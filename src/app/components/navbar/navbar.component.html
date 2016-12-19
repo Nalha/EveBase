@@ -14,8 +14,11 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li routerLinkActive="active"><a routerLink="login">Link</a></li>
-        <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a routerLink="/">Link</a></li>
+        <li *ngIf="!hasToken">
+          <a (click)="goToLogin()" style="padding-top: 10px; cursor: pointer">
+            <img src="/assets/images/EVE_SSO_Login_Buttons_Small_Black.png">
+          </a>
+        </li>
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">

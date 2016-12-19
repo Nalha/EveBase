@@ -3,6 +3,7 @@
 # compiled output
 /dist
 /tmp
+/src/dist
 
 # dependencies
 /node_modules
@@ -24,6 +25,7 @@
 npm-debug.log
 testem.log
 /typings
+stateValue.ts
 
 # e2e
 /e2e/*.js

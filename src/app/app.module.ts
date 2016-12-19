@@ -2,22 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import {RouterModule, Routes} from "@angular/router";
-import { LoginComponent } from './components/login/login.component';
 import {Ng2BootstrapModule} from "ng2-bootstrap";
 import { NavbarComponent } from './components/navbar/navbar.component';
+import {TokenComponent} from "./components/token/token.component";
+import {TokenService} from "./services/token.service";
+import {CrestService} from "./services/crest.service";
 
 const routes: Routes = [
   {
     path: "",
     component: HomeComponent
-  },
-  {
-    path: "login",
-    component: LoginComponent
+  }, {
+    path: "token",
+    component: TokenComponent
   }
 ];
 
@@ -25,8 +25,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent,
-    NavbarComponent
+    NavbarComponent,
+    TokenComponent
   ],
   imports: [
     RouterModule.forRoot(routes, { useHash: true }),
@@ -35,7 +35,10 @@ const routes: Routes = [
     HttpModule,
     Ng2BootstrapModule
   ],
-  providers: [],
+  providers: [
+    TokenService,
+    CrestService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
